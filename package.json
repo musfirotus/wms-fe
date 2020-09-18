@@ -1,0 +1,64 @@
+{
+  "name": "wms-fe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FronEnd with Heroku Deployment",
+  "author": {
+    "name": "Musfirotus"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cssbuild": "npx tailwindcss build src/assets/css/tailwind.css -o src/assets/css/styles.css"
+  },
+  "main": "app.js",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "core-js": "^3.6.5",
+    "dayjs": "^1.8.36",
+    "register-service-worker": "^1.7.1",
+    "tailwindcss": "^1.8.10",
+    "vue": "^2.6.11",
+    "vue-progressbar": "^0.7.5",
+    "vue-router": "^3.2.0",
+    "vue-sweetalert2": "^3.0.8",
+    "vue-tailwind-modal": "^1.0.3",
+    "vue-tailwind-picker": "^1.1.4",
+    "vue2-transitions": "^0.3.0",
+    "vuex": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-pwa": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "_id": "wms-fe@1.0.0",
+  "bugs": {
+    "url": "https://github.com/musfirotus/wms-fe/issues"
+  },
+  "homepage": "https://github.com/musfirotus/wms-fe#readme",
+  "keywords": [
+    "Heroku",
+    "Vuex",
+    "Express",
+    "Node.js",
+    "Sequelize",
+    "MySql",
+    "Tailwindcss"
+  ],
+  "license": "ISC",
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/musfirotus/wms-fe.git"
+  }
+}
