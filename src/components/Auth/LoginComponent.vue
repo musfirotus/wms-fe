@@ -3,7 +3,7 @@
       <div
         class="flex-1 h-full max-w-4xl mx-auto overflow-hidden rounded-lg shadow-xl bg-gray-800"
       >
-        <div class="flex flex-col overflow-y-auto md:flex-row">
+        <div @submit="sendRequest" class="flex flex-col overflow-y-auto md:flex-row">
           <div class="h-32 md:h-auto md:w-1/2">
             <img
               aria-hidden="true"
@@ -13,42 +13,53 @@
             />
           </div>
           <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
-            <div class="w-full">
-              <h1
-                class="mb-4 text-xl font-semibold text-gray-200"
-              >
-                Login
-              </h1>
-              <label class="block text-sm">
-                <span class="text-gray-400">Email</span>
+            <div class="alert" v-if="errorMessage!==''">{{errorMessage}}</div>
+            <form class="w-full">
+              <h1 class="mb-4 text-xl font-semibold text-gray-200">Login</h1>
+              <div>
+                <label
+                  class="block text-sm text-gray-400"
+                  for="username">
+                  Username
+                </label>
                 <input
                   class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
+                  id="username"
+                  type="text"
                   placeholder="Jane Doe"
+                  v-model="username"
                 />
-              </label>
-              <label class="block mt-4 text-sm">
-                <span class="text-gray-400">Password</span>
+              </div>
+
+              <div>
+                <label
+                  class="block mt-4 text-sm"
+                  for="password">
+                  Password
+                </label>
                 <input
                   class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
+                  id="password"
+                  v-model="password"
                   placeholder="***************"
                   type="password"
                 />
-              </label>
+              </div>
 
-              <!-- You should use a button here, as the anchor is only used for the example  -->
-              <button
-                class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                href="../index.html"
-              >
-                Log in
-              </button>
+              <div class="flex items-center justify-between">
+                <button
+                  class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                  type="submit">
+                  Log in
+                </button>
+              </div>
 
-              <hr class="my-8" />
+              <hr class="my-6" />
 
-              <p class="mt-1">
+              <div class="mt-1">
                 <router-link :to="{ name: 'Register'}" class="text-sm font-medium text-purple-400 hover:underline">Create account</router-link>
-              </p>
-            </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -56,7 +67,38 @@
 </template>
 
 <script>
+import { mapActions, mapState } from "vuex";
 export default {
-    name: 'LoginIndex'
+  name: 'LoginIndex',
+  data: () => ({
+    username: "",
+    password: "",
+  }),
+  created() {
+    // this.reqLogin();
+  },
+  computed: {
+    ...mapState("Auth", ["errorMessage"]),
+  },
+  methods: {
+    ...mapActions("Auth", ["reqLogin"]),
+    sendRequest(e) {
+      e.preventDefault();
+      const error = [];
+      if (this.username === "") {
+        error.push("Username required");
+      }
+      if (this.password === "") {
+        error.push("Password required");
+      }
+
+      if (error.length > 0) {
+        alert(error.join(",\r\n"));
+      } else {
+        this.reqLogin({ username: this.username, password: this.password });
+      }
+      return false;
+    },
+  },
 }
 </script>

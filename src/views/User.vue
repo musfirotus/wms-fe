@@ -32,11 +32,11 @@
                         <th class="px-4 py-3 text-center">Update</th>
                         <th class="px-4 py-3 text-center">Delete</th>
                     </tr>
-                    <tr class="text-gray-400 text-sm bg-gray-800">
-                        <td class="px-4 py-3 font-semibold">Musfirotus Sa'adah</td>
-                        <td class="px-4 py-3 text-sm">userfira</td>
-                        <td class="px-4 py-3 text-sm">fira@gmail.com</td>
-                        <td class="px-4 py-3 text-sm">081122334455</td>
+                    <tr v-for="(user, i) in users" :key="i" class="text-gray-400 text-sm bg-gray-800">
+                        <td class="px-4 py-3 font-semibold">{{ user.full_name }}</td>
+                        <td class="px-4 py-3 text-sm">{{ user.username }}</td>
+                        <td class="px-4 py-3 text-sm">{{ user.email }}</td>
+                        <td class="px-4 py-3 text-sm">{{ user.phone_number }}</td>
                         <td class="px-4 py-3 text-xs">
                           <span class="px-2 py-1 font-semibold leading-tight rounded-full bg-green-700 text-green-100">Active</span>
                         </td>
@@ -84,10 +84,18 @@
 </template>
 
 <script>
-
+import { mapState, mapActions } from "vuex";
 export default {
   name: 'User',
-  components: {
-  }
+  created() {
+    this.getUser();
+  },
+
+  methods: {
+    ...mapActions(["getUser"]),
+  },
+  computed: {
+    ...mapState(["users"]),
+  },
 }
 </script>
