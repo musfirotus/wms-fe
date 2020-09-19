@@ -1,15 +1,15 @@
 # wms-fe
 
 ## Task
-| No.     | Views       | GET        | GET id     | POST       | PUT        | Pagination | Count      | Design |
-| :-----: | :---------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :----: |
-| :one:   | User        | :x: | :x: | :x: | :x: | :x: | :x: | :x: |
-| :two:   | Product     | :x: | :x: | :x: | :x: | :x: | :x: | :x: |
-| :three: | Product In  | :x: | :x: | :x: | :x: | :x: | :x: | :x: |
-| :four:  | Product Out | :x: | :x: | :x: | :x: | :x: | :x: | :x: |
-| :five:  | Dashboard   | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :x: |
-| :six:   | Login       | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :heavy_check_mark: |
-| :seven: | Register    | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :heavy_check_mark: |
+| No.     | Views       | GET        | GET id     | POST       | PUT        | Pagination | Count      | Design             | Modals     |
+| :-----: | :---------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :----------------: | :--------: |
+| :one:   | User        | :x:        | :x:        | :x:        | :x:        | :x:        | :x:        | :heavy_check_mark: | :x:        |
+| :two:   | Product     | :x:        | :x:        | :x:        | :x:        | :x:        | :x:        | :heavy_check_mark: | :x:        |
+| :three: | Product In  | :x:        | :x:        | :x:        | :x:        | :x:        | :x:        | :heavy_check_mark: | :x:        |
+| :four:  | Product Out | :x:        | :x:        | :x:        | :x:        | :x:        | :x:        | :heavy_check_mark: | :x:        |
+| :five:  | Dashboard   | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :heavy_check_mark: | :no_entry: |
+| :six:   | Login       | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :heavy_check_mark: | :x:        |
+| :seven: | Register    | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :heavy_check_mark: | :x:        |
 
 ## Vuex Flow
 
