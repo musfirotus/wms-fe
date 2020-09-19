@@ -8,8 +8,8 @@
 | :three: | Product In  | :x:        | :x:        | :x:        | :x:        | :x:        | :x:        | :heavy_check_mark: | :x:        |
 | :four:  | Product Out | :x:        | :x:        | :x:        | :x:        | :x:        | :x:        | :heavy_check_mark: | :x:        |
 | :five:  | Dashboard   | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :heavy_check_mark: | :no_entry: |
-| :six:   | Login       | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :heavy_check_mark: | :x:        |
-| :seven: | Register    | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :no_entry: | :heavy_check_mark: | :x:        |
+| :six:   | Login       | :no_entry: | :no_entry: | :x:        | :no_entry: | :no_entry: | :no_entry: | :heavy_check_mark: | :x:        |
+| :seven: | Register    | :no_entry: | :no_entry: | :x:        | :no_entry: | :no_entry: | :no_entry: | :heavy_check_mark: | :x:        |
 
 ## Vuex Flow
 
