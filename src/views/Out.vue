@@ -30,16 +30,18 @@
                         class="text-xs font-semibold tracking-wide text-left uppercase border-b border-gray-700 text-gray-400 bg-gray-800"
                     >
                         <th class="px-4 py-3 text-center">Product Name</th>
+                        <th class="px-4 py-3 text-center">Supplier</th>
                         <th class="px-4 py-3 text-center">Date</th>
                         <th class="px-4 py-3 text-center">Total</th>
                         <th class="px-4 py-3 text-center">Update</th>
                         <th class="px-4 py-3 text-center">Delete</th>
                         <!-- <th class="px-4 py-3">Actions</th> -->
                     </tr>
-                    <tr class="text-gray-400 text-sm bg-gray-800">
-                        <td class="items-center"><p class="font-semibold">Baju</p></td>
-                        <td class="text-sm">22/09/2020</td>
-                        <td class="text-sm">5</td>
+                    <tr v-for="(outcome, i) in outcomes.data" :key="i" class="text-gray-400 text-sm bg-gray-800">
+                        <td class="items-center font-semibold">{{ outcome.Product['name'] }}</td>
+                        <td class="items-center font-semibold">{{ outcome.Product['supplier']['full_name'] }}</td>
+                        <td class="text-sm">{{ outcome.date }}</td>
+                        <td class="text-sm">{{ outcome.total }}</td>
                         <td class="px-4 py-3 justify-center">
                         <button
                             class="px-2 py-2 text-sm font-medium leading-5 rounded-lg text-gray-400 focus:outline-none focus:shadow-outline-gray"
@@ -84,10 +86,18 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'Out',
-  components: {
+  created() {
+      this.getOutcomes()
+  },
+  computed: {
+      ...mapState(['outcomes'])
+  },
+  methods: {
+      ...mapActions(['getOutcomes'])
   }
 }
 </script>

@@ -59,28 +59,24 @@
                 <th class="px-4 py-3 text-center">Picture</th>
                 <th class="px-4 py-3 text-center">Stock</th>
                 <th class="px-4 py-3 text-center">Price</th>
-                <th class="px-4 py-3 text-center">Status</th>
+                <th class="px-4 py-3 text-center">Supplier</th>
                 <th class="px-4 py-3 text-center">Actions</th>
               </tr>
-              <tr class="text-gray-400 text-sm bg-gray-800">
-                <td class="items-center">
-                  <p class="font-semibold">Baju</p>
+              <tr v-for="(product, i) in products.data" :key="i" class="text-gray-400 text-sm bg-gray-800">
+                <td class="items-center font-semibold">
+                  {{ product.name }}
                 </td>
                 <td class="text-sm">
-                  Ini gambar
+                  <img class="items-center w-56 m-4" :src="product.photo_url" :alt="product.photo_url">
                 </td>
                 <td class="text-sm">
-                  1000
+                  {{ product.stock }}
                 </td>
                 <td class="text-sm">
-                  Rp 65.000
+                  {{ product.price }}
                 </td>
                 <td class="text-xs">
-                  <span
-                    class="px-2 py-1 font-semibold leading-tight rounded-full bg-green-700 text-green-100"
-                  >
-                    Ready
-                  </span>
+                  {{ product.supplier.full_name }}
                 </td>
                 <td class="px-4 py-3 justify-center">
                   <button
@@ -124,9 +120,17 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
 export default {
   name: 'Product',
-  components: {
+  created() {
+    this.getProducts()
+  },
+  computed: {
+    ...mapState(["products"])
+  },
+  methods: {
+    ...mapActions(["getProducts"])
   }
 }
 </script>

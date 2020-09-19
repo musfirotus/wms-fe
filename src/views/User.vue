@@ -32,7 +32,7 @@
                         <th class="px-4 py-3 text-center">Update</th>
                         <th class="px-4 py-3 text-center">Delete</th>
                     </tr>
-                    <tr v-for="(user, i) in users" :key="i" class="text-gray-400 text-sm bg-gray-800">
+                    <tr v-for="(user, i) in users.data" :key="i" class="text-gray-400 text-sm bg-gray-800">
                         <td class="px-4 py-3 font-semibold">{{ user.full_name }}</td>
                         <td class="px-4 py-3 text-sm">{{ user.username }}</td>
                         <td class="px-4 py-3 text-sm">{{ user.email }}</td>
