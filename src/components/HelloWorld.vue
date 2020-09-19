@@ -16,7 +16,7 @@
                 </div>
                 <div>
                     <p class="mb-2 text-sm font-medium text-gray-400">Total Users</p>
-                    <p class="text-lg font-semibold text-gray-200">89</p>
+                    <p class="text-lg font-semibold text-gray-200">{{ users.totalItems }}</p>
                 </div>
             </div>
             <!-- Card -->
@@ -32,7 +32,7 @@
                 </div>
                 <div>
                     <p class="mb-2 text-sm font-medium text-gray-400">Products</p>
-                    <p class="text-lg font-semibold text-gray-200">768</p>
+                    <p class="text-lg font-semibold text-gray-200">{{ products.totalItems }}</p>
                 </div>
             </div>
             <!-- Card -->
@@ -46,7 +46,7 @@
                 </div>
                 <div>
                     <p class="mb-2 text-sm font-medium text-gray-400">Products Income</p>
-                    <p class="text-lg font-semibold text-gray-200">376</p>
+                    <p class="text-lg font-semibold text-gray-200">{{ incomes.totalItems }}</p>
                 </div>
             </div>
             <!-- Card -->
@@ -62,7 +62,7 @@
                 </div>
                 <div>
                     <p class="mb-2 text-sm font-medium text-gray-400">Products Outcome</p>
-                    <p class="text-lg font-semibold text-gray-200">35</p>
+                    <p class="text-lg font-semibold text-gray-200">{{ outcomes.totalItems }}</p>
                 </div>
             </div>
         </div>
@@ -70,7 +70,26 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
 export default {
     name: 'HelloWorld',
+    created() {
+        this.getUser();
+        this.getProducts();
+        this.getIncomes();
+        this.getOutcomes();
+    },
+    computed: {
+        ...mapState(["users"]),
+        ...mapState(["products"]),
+        ...mapState(["incomes"]),
+        ...mapState(["outcomes"])
+    },
+    methods: {
+        ...mapActions(["getUser"]),
+        ...mapActions(["getProducts"]),
+        ...mapActions(["getIncomes"]),
+        ...mapActions(["getOutcomes"])
+    }
 }
 </script>
