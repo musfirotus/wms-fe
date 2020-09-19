@@ -1,91 +1,84 @@
 <template>
-  <div class="mx-auto">
-    <div class="w-full max-w-xs mx-auto mt-8">
-      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <h1 class="text-gray-700 font-bold mt-4 mb-8 text-xl">Register</h1>
-        <!-- Username -->
-        <div class="mb-4">
-          <label
-            class="text-left block text-gray-700 text-base font-bold mb-2"
-            for="username"
-            >Username</label
-          >
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="username"
-            type="text"
-          />
+  <div class="flex items-center min-h-screen p-6 bg-gray-900">
+      <div
+        class="flex-1 h-full max-w-4xl mx-auto overflow-hidden rounded-lg shadow-xl bg-gray-800"
+      >
+        <div class="flex flex-col overflow-y-auto md:flex-row">
+          <div class="h-32 md:h-auto md:w-1/2">
+            <img
+              aria-hidden="true"
+              class="object-cover w-full h-full"
+              src="@/assets/img/create-account-office.jpeg"
+              alt="Office"
+            />
+          </div>
+          <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
+            <div class="w-full">
+              <h1
+                class="mb-4 text-xl font-semibold text-gray-200"
+              >
+                Create account
+              </h1>
+              <label class="block text-sm">
+                <span class="text-gray-400">Email</span>
+                <input
+                  class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
+                  placeholder="Jane Doe"
+                />
+              </label>
+              <label class="block mt-4 text-sm">
+                <span class="text-gray-400">Password</span>
+                <input
+                  class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
+                  placeholder="***************"
+                  type="password"
+                />
+              </label>
+              <label class="block mt-4 text-sm">
+                <span class="text-gray-400">
+                  Confirm password
+                </span>
+                <input
+                  class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
+                  placeholder="***************"
+                  type="password"
+                />
+              </label>
+
+              <div class="flex mt-6 text-sm">
+                <label class="flex items-center text-gray-400">
+                  <input
+                    type="checkbox"
+                    class="text-purple-600 form-checkbox focus:border-purple-400 focus:outline-none focus:shadow-outline-purple focus:shadow-outline-gray"
+                  />
+                  <span class="ml-2">
+                    I agree to the
+                    <span class="underline">privacy policy</span>
+                  </span>
+                </label>
+              </div>
+
+              <!-- You should use a button here, as the anchor is only used for the example  -->
+              <button
+                class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                href="./login.html"
+              >
+                Create account
+              </button>
+
+              <hr class="my-8" />
+
+              <p class="mt-4 text-sm font-medium text-purple-600 dark:text-purple-400">
+                Already have an account?
+                <router-link :to="{ name: 'Login' }" class="hover:underline">
+                  Login
+                </router-link>
+              </p>
+            </div>
+          </div>
         </div>
-        <!-- Password -->
-        <div class="mb-4">
-          <label
-            class="text-left block text-gray-700 text-base font-bold mb-2"
-            for="password"
-            >Password</label
-          >
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="password"
-            type="password"
-          />
-        </div>
-        <!-- Full Name -->
-        <div class="mb-4">
-          <label
-            class="text-left block text-gray-700 text-base font-bold mb-2"
-            for="username"
-            >Full Name</label
-          >
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="username"
-            type="text"
-          />
-        </div>
-        <!-- Phone Number -->
-        <div class="mb-4">
-          <label
-            class="text-left block text-gray-700 text-base font-bold mb-2"
-            for="username"
-            >Phone Number</label
-          >
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="username"
-            type="text"
-          />
-        </div>
-        <!-- Email -->
-        <div class="mb-6">
-          <label
-            class="text-left block text-gray-700 text-base font-bold mb-2"
-            for="username"
-            >Email</label
-          >
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="username"
-            type="text"
-          />
-        </div>
-        <div class="flex items-center justify-between">
-          <router-link to="/dashboard" class="w-full">
-            <button
-              class="bg-blue-500 hover:bg-blue-700 text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="button"
-            >
-              Register
-            </button>
-          </router-link>
-        </div>
-        <div class="mt-4">
-          <router-link to="/login" class="text-blue-500 font-bold"
-            >Cancel</router-link
-          >
-        </div>
-      </form>
+      </div>
     </div>
-  </div>
 </template>
 
 <script>
