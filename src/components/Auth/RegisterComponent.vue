@@ -23,9 +23,36 @@
                 <span class="text-gray-400">Email</span>
                 <input
                   class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
-                  placeholder="Jane Doe"
+                  placeholder="useranda"
                 />
               </label>
+
+              <label class="block mt-4 text-sm">
+                <span class="text-gray-400">
+                  Full Name
+                </span>
+                <input
+                  class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
+                  placeholder="Nama Anda"
+                />
+              </label>
+
+              <label class="block mt-4 text-sm">
+                <span class="text-gray-400">Email Address</span>
+                <input
+                  class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
+                  placeholder="user@example.com"
+                />
+              </label>
+
+              <label class="block mt-4 text-sm">
+                <span class="text-gray-400">Phone Number</span>
+                <input
+                  class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
+                  placeholder="08xxxxxxxxxx"
+                />
+              </label>
+
               <label class="block mt-4 text-sm">
                 <span class="text-gray-400">Password</span>
                 <input
@@ -34,6 +61,7 @@
                   type="password"
                 />
               </label>
+              
               <label class="block mt-4 text-sm">
                 <span class="text-gray-400">
                   Confirm password
@@ -44,19 +72,6 @@
                   type="password"
                 />
               </label>
-
-              <div class="flex mt-6 text-sm">
-                <label class="flex items-center text-gray-400">
-                  <input
-                    type="checkbox"
-                    class="text-purple-600 form-checkbox focus:border-purple-400 focus:outline-none focus:shadow-outline-purple focus:shadow-outline-gray"
-                  />
-                  <span class="ml-2">
-                    I agree to the
-                    <span class="underline">privacy policy</span>
-                  </span>
-                </label>
-              </div>
 
               <!-- You should use a button here, as the anchor is only used for the example  -->
               <button

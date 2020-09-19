@@ -1,9 +1,10 @@
 <template>
     <main class="h-full pb-16 overflow-y-auto">
         <div class="container grid px-6 mx-auto">
-            <h2 class="my-6 text-2xl font-semibold text-gray-200">Users List</h2>
+            <h2 class="my-6 text-2xl font-semibold text-gray-200">Products Outcome List</h2>
+
             <div class="flex w-full">
-                <button class="flex w-1/7 justify-left mr-2 mb-4 px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                <button class="flex justify-right w-1/7 mb-4 px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="w-6 h-6"
@@ -18,30 +19,29 @@
                             d="M12 6v6m0 0v6m0-6h6m-6 0H6"
                         />
                     </svg>
-                    <span>New User</span>
+                    <span>New Outcome</span>
                 </button>
             </div>
+
+            <!-- With actions -->
             <div class="w-full overflow-x-auto rounded-lg shadow-xs">
                 <table class="w-full">
-                    <tr class="text-xs font-semibold tracking-wide text-left uppercase border-b border-gray-700 text-gray-400 bg-gray-800">
-                        <th class="px-4 py-3 text-center">Full Name</th>
-                        <th class="px-4 py-3 text-center">Username</th>
-                        <th class="px-4 py-3 text-center">Email</th>
-                        <th class="px-4 py-3 text-center">Phone Number</th>
-                        <th class="px-4 py-3 text-center">Status</th>
+                    <tr
+                        class="text-xs font-semibold tracking-wide text-left uppercase border-b border-gray-700 text-gray-400 bg-gray-800"
+                    >
+                        <th class="px-4 py-3 text-center">Product Name</th>
+                        <th class="px-4 py-3 text-center">Date</th>
+                        <th class="px-4 py-3 text-center">Total</th>
                         <th class="px-4 py-3 text-center">Update</th>
                         <th class="px-4 py-3 text-center">Delete</th>
+                        <!-- <th class="px-4 py-3">Actions</th> -->
                     </tr>
                     <tr class="text-gray-400 text-sm bg-gray-800">
-                        <td class="px-4 py-3 font-semibold">Musfirotus Sa'adah</td>
-                        <td class="px-4 py-3 text-sm">userfira</td>
-                        <td class="px-4 py-3 text-sm">fira@gmail.com</td>
-                        <td class="px-4 py-3 text-sm">081122334455</td>
-                        <td class="px-4 py-3 text-xs">
-                          <span class="px-2 py-1 font-semibold leading-tight rounded-full bg-green-700 text-green-100">Active</span>
-                        </td>
+                        <td class="items-center"><p class="font-semibold">Baju</p></td>
+                        <td class="text-sm">22/09/2020</td>
+                        <td class="text-sm">5</td>
                         <td class="px-4 py-3 justify-center">
-                          <button
+                        <button
                             class="px-2 py-2 text-sm font-medium leading-5 rounded-lg text-gray-400 focus:outline-none focus:shadow-outline-gray"
                             aria-label="Edit"
                             >
@@ -86,7 +86,7 @@
 <script>
 
 export default {
-  name: 'User',
+  name: 'Out',
   components: {
   }
 }

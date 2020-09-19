@@ -1,9 +1,9 @@
 <template>
-  <div class="flex w-full">
-    <div class="w-1/4 h-screen">
+  <div class="flex">
+    <div class="w-1/5 h-screen bg-gray-800">
       <Sidebar id="nav" />
     </div>
-    <div class="w-3/4 h-screen border border-black">
+    <div class="w-4/5 h-screen bg-gray-900">
         <router-view />
     </div>
   </div>

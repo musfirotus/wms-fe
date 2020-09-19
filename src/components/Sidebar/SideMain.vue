@@ -8,6 +8,12 @@
       <router-link :to="{ name: 'Products' }">Product</router-link>
     </div>
     <div class="w-full p-5">
+      <router-link :to="{ name: 'Ins' }">Product In</router-link>
+    </div>
+    <div class="w-full p-5">
+      <router-link :to="{ name: 'Outs' }">Product Out</router-link>
+    </div>
+    <div class="w-full p-5">
       <router-link :to="{ name: 'Users' }">User</router-link>
     </div>
   </div>
@@ -27,24 +33,16 @@ export default {
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
-
 #nav a {
   font-weight: bold;
-  color: black;
+  color: white;
 }
 
 #nav a.router-link-exact-active {
-  color: #ffffff;
-  padding: 20px 50px;
-  background-color: #4299e1;
+  color: #4299e1;
 }
 
 #nav a:hover {
-  color: #ffffff;
-  padding: 20px 50px;
-  background-color: #4299e1;
+  color: #4299e1;
 }
 </style>

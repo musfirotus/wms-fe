@@ -22,17 +22,28 @@ const routes = [
   {
     path: '/main',
     name: 'MainRoute',
+    redirect: {name: 'Dashboards'},
     component: () => import(/* webpackChunkName: "Main" */ '@/views/Main.vue'),
     children: [
       {
         path: '',
-        name: 'Dashboard',
-        component: () => import(/* webpackChunkName: "Dashboard" */ '@/views/Dashboard.vue'),
+        name: 'Dashboards',
+        component:() => import(/* webpackChunkName: "Dashboards" */ '@/views/Dashboard.vue')
       },
       {
         path: 'product',
         name: 'Products',
         component: () => import(/* webpackChunkName: 'Products' */ '@/views/Product.vue')
+      },
+      {
+        path: 'in',
+        name: 'Ins',
+        component: () => import(/* webpackChunkName: 'Ins' */ '@/views/In.vue')
+      },
+      {
+        path: 'out',
+        name: 'Outs',
+        component: () => import(/* webpackChunkName: 'Outs' */ '@/views/Out.vue')
       },
       {
         path: 'user',
