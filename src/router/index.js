@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
+import Main from '@/views/Main.vue'
+import Dashboard from '@/views/Dashboard.vue'
 
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css';
@@ -31,16 +33,16 @@ const routes = [
   {
     path: '/main',
     name: 'MainRoute',
-    redirect: {name: 'Dashboards'},
-    component: () => import(/* webpackChunkName: "Main" */ '@/views/Main.vue'),
+    // redirect: {name: 'Dashboards'},
+    component: Main,
     // meta: {
     //   requiresAuth: true
     // },
     children: [
       {
-        path: '/dashboard',
+        path: '',
         name: 'Dashboards',
-        component:() => import(/* webpackChunkName: "Dashboards" */ '@/views/Dashboard.vue'),
+        component: Dashboard,
         // meta: {
         //   requiresAuth: true
         // }
