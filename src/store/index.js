@@ -32,7 +32,7 @@ export default new Vuex.Store({
   },
   actions: {
     async getUser({ commit }) {
-      Api.get("/user", {
+      Api.get("/user?limit=10000&page=1", {
           headers: {
             Authorization: `bearer ${localStorage.getItem("token")}`
           },
@@ -44,7 +44,7 @@ export default new Vuex.Store({
         }));
     },
     async getProducts({ commit }) {
-      Api.get("/product", {
+      Api.get("/product?limit=10000&page=1", {
           headers: {
             Authorization: `bearer ${localStorage.getItem("token")}`
           },
@@ -56,7 +56,7 @@ export default new Vuex.Store({
       }));
     },
     async getIncomes({ commit }) {
-      Api.get("/in", {
+      Api.get("/in?limit=10000&page=1", {
           headers: {
             Authorization: `bearer ${localStorage.getItem("token")}`
           },
@@ -68,7 +68,7 @@ export default new Vuex.Store({
       }));
     },
     async getOutcomes({ commit }) {
-      Api.get("/out", {
+      Api.get("/out?limit=10000&page=1", {
           headers: {
             Authorization: `bearer ${localStorage.getItem("token")}`
           },
