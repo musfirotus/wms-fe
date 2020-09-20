@@ -7,16 +7,16 @@
                 <button class="flex justify-right w-1/7 mb-4 px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="w-6 h-6"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
+                        class="w-5 h-5 mr-1"
                     >
                         <path
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             stroke-width="2"
-                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                            d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
                         />
                     </svg>
                     <span>New Outcome</span>
@@ -33,8 +33,7 @@
                         <th class="px-4 py-3 text-center">Supplier</th>
                         <th class="px-4 py-3 text-center">Date</th>
                         <th class="px-4 py-3 text-center">Total</th>
-                        <th class="px-4 py-3 text-center">Update</th>
-                        <th class="px-4 py-3 text-center">Delete</th>
+                        <th class="px-4 py-3 text-center">Actions</th>
                         <!-- <th class="px-4 py-3">Actions</th> -->
                     </tr>
                     <tr v-for="(outcome, i) in outcomes.data" :key="i" class="text-gray-400 text-sm bg-gray-800">
@@ -43,26 +42,28 @@
                         <td class="text-sm">{{ outcome.date }}</td>
                         <td class="text-sm">{{ outcome.total }}</td>
                         <td class="px-4 py-3 justify-center">
-                        <button
-                            class="px-2 py-2 text-sm font-medium leading-5 rounded-lg text-gray-400 focus:outline-none focus:shadow-outline-gray"
-                            aria-label="Edit"
-                            >
-                            <svg
-                                class="w-5 h-5"
-                                aria-hidden="true"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                            >
-                                <path
-                                d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"
-                                ></path>
-                            </svg>
-                            </button>
-                        </td>
-                        <td class="px-4 py-3 justify-center">
                             <button
-                            class="px-2 py-2 text-sm font-medium leading-5 rounded-lg text-gray-400 focus:outline-none focus:shadow-outline-gray"
-                            aria-label="Delete"
+                                class="px-2 py-2 text-sm font-medium leading-5 rounded-lg text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                aria-label="Detail"
+                            >
+                                <svg
+                                    class="w-5 h-5"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                                    />
+                                </svg>
+                            </button>
+                            <button
+                                class="px-2 py-2 text-sm font-medium leading-5 rounded-lg text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                aria-label="Delete"
                             >
                             <svg
                                 class="w-5 h-5"
