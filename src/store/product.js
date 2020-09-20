@@ -1,10 +1,10 @@
 import Api from './api';
-// import router from '../router/index'
+import router from '../router/index'
 
 export default {
     namespaced: true,
     state: () => ({
-        products: []
+        products: [],
     }),
     mutations: {
         getProductsList(state, payload) {
@@ -24,5 +24,24 @@ export default {
                 error
             }));
         },
+        async addProducts(_, payload) {
+            try {
+                await Api.post("/product", payload, {
+                    headers: {
+                      'Content-Type': 'multipart/form-data',
+                      "Authorization": `Bearer ${localStorage.getItem("token")}`
+                    }
+                  })
+                    .then(() => {
+                        // alert(res.data.message)
+                        router.go({name: "Products"})
+                    })
+                    .catch((err) => {
+                        alert(err.response.data.message)
+                    });
+            } catch (error) {
+                error
+            }
+        }
     }
 }

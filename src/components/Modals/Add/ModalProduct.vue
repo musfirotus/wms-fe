@@ -29,10 +29,12 @@
         >
             <!-- a -->
             <div class="mx-auto">
-                <div class="w-full rounded-lg text-white max-w-xs mx-auto mt-8 bg-gray-900">
+                <div
+                    class="w-full rounded-lg text-white max-w-xs mx-auto mt-8 bg-gray-900"
+                >
                     <form
                         class="shadow-md rounded px-8 pt-6 pb-8 mb-4"
-                        @submit="kirimData"
+                        @submit.prevent="reqData"
                     >
                         <h1 class="font-bold mt-4 mb-8 text-xl">
                             Add Product
@@ -49,7 +51,7 @@
                                 class="shadow bg-gray-800 appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                                 id="productname"
                                 type="text"
-                                v-model="data.productname"
+                                v-model="datas.productname"
                             />
                         </div>
 
@@ -64,7 +66,7 @@
                                 class="shadow bg-gray-800 appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                                 id="stock"
                                 type="text"
-                                v-model="data.productstock"
+                                v-model="datas.stock"
                             />
                         </div>
 
@@ -78,7 +80,7 @@
                             <input
                                 class="bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                                 id="price"
-                                v-model="data.productprice"
+                                v-model="datas.price"
                                 type="text"
                             />
                         </div>
@@ -90,14 +92,17 @@
                                 for="username"
                                 >Photo</label
                             >
-                            <input type="file" @change="previewFiles" />
+                            <input
+                                type="file"
+                                ref="file"
+                                @change="previewFiles"
+                            />
                         </div>
 
                         <div class="flex items-center justify-between">
                             <button
                                 class="bg-purple-500 hover:bg-purple-700 text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                                type="button"
-                                @click="kirimData"
+                                type="submit"
                             >
                                 Add
                             </button>
@@ -125,30 +130,39 @@
 </template>
 
 <script>
-    // import { mapState, mapActions, mapMutations } from "vuex";
+    import { mapActions } from "vuex";
 
     export default {
         name: "ModalAll",
-        components: {},
         data() {
             return {
                 showModal: false,
-                data: {
+                datas: {
                     productname: "",
-                    productprice: 0,
-                    productstock: 0,
-                    productFoto: null,
+                    price: 0,
+                    stock: 0,
+                    photo: null,
                 },
             };
         },
         computed: {
         },
-
-
         methods: {
             toggleModal() {
                 this.showModal = !this.showModal;
-            }
+            },
+            previewFiles() {
+                this.datas.photo = this.$refs.file.files[0];
+            },
+            reqData() {
+                const multipart=  new FormData()
+                multipart.append('name', this.datas.productname)
+                multipart.append('stock', this.datas.stock)
+                multipart.append('price', this.datas.price)
+                multipart.append('photo', this.datas.photo)
+                this.addProducts(multipart)
+            },
+            ...mapActions("Product", ["addProducts"])
         }
     };
 </script>

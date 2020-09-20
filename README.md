@@ -6,7 +6,7 @@
 
 | No.     | Views       | GET                | GET id     | POST               | PUT        | Pagination | Count              | Design             | Modals             | Alert      |
 | :-----: | :---------: | :----------------: | :--------: | :----------------: | :--------: | :--------: | :----------------: | :----------------: | :----------------: | :--------: |
-| :one:   | User        | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:        |
+| :one:   | User        | :heavy_check_mark: | :x:        | :heavy_check_mark: | :x:        | :x:        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:        |
 | :two:   | Product     | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:        |
 | :three: | Product In  | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:        |
 | :four:  | Product Out | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:        |
