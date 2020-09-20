@@ -2,6 +2,11 @@
 
 ## Task
 
+- Note :
+    - :heavy_check_mark: Finished features
+    - :x: Unfinished features
+    - :no_entry: Not include features
+
 - [x] Logout
 - [x] Count in Dashboard
 
