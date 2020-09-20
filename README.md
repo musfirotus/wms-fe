@@ -1,7 +1,9 @@
 # wms-fe
 
 ## Task
+
 - [x] Logout
+
 | No.     | Views       | GET                | GET id     | POST               | PUT        | Pagination | Count              | Design             | Modals     |
 | :-----: | :---------: | :----------------: | :--------: | :----------------: | :--------: | :--------: | :----------------: | :----------------: | :--------: |
 | :one:   | User        | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
