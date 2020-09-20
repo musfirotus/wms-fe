@@ -1,6 +1,7 @@
 # wms-fe
 
 ## Task
+- [x] Logout
 | No.     | Views       | GET                | GET id     | POST               | PUT        | Pagination | Count              | Design             | Modals     |
 | :-----: | :---------: | :----------------: | :--------: | :----------------: | :--------: | :--------: | :----------------: | :----------------: | :--------: |
 | :one:   | User        | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
@@ -10,8 +11,6 @@
 | :five:  | Dashboard   | :no_entry:         | :no_entry: | :no_entry:         | :no_entry: | :no_entry: | :no_entry:         | :heavy_check_mark: | :no_entry: |
 | :six:   | Login       | :no_entry:         | :no_entry: | :heavy_check_mark: | :no_entry: | :no_entry: | :no_entry:         | :heavy_check_mark: | :x:        |
 | :seven: | Register    | :no_entry:         | :no_entry: | :heavy_check_mark: | :no_entry: | :no_entry: | :no_entry:         | :heavy_check_mark: | :x:        |
-
-- [x] Logout
 
 ## Vuex Flow
 
