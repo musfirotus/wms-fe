@@ -51,9 +51,11 @@ const routes = [
         path: 'product',
         name: 'Products',
         component: () => import(/* webpackChunkName: 'Products' */ '@/views/Product.vue'),
-        // meta: {
-        //   requiresAuth: true
-        // }
+      },
+      {
+        path:'product/:id',
+        name: "DetProduct",
+        component: () => import(/* webpackChunkName: "DetailProduct" */ '@/components/Update/UpProduct.vue')
       },
       {
         path: 'in',

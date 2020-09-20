@@ -1,15 +1,20 @@
 import Api from './api';
 import router from '../router/index'
+// import Vue from 'vue'
 
 export default {
     namespaced: true,
     state: () => ({
         products: [],
+        detail: []
     }),
     mutations: {
         getProductsList(state, payload) {
             state.products = payload.data;
         },
+        setDetail(state, payload) {
+            state.detail = payload
+        }
     },
     actions: {
         async getProducts({ commit }) {
@@ -52,5 +57,38 @@ export default {
                 console.log({ errr: errr.message });
               });
         },
+        async getById({ commit }, payload) {
+            try {
+                await Api.get("product/" + payload, {
+                    headers: {
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`
+                    }
+                })
+                .then((res) => {
+                    const { data : { data } } = res
+                    commit("setDetail", data)
+                })
+                .catch((err) => {
+                    throw new Error(err)
+                })
+            } catch(error) {
+                alert("There's no such product")
+                router.push({ name: "Products", query: { page: 1 }})
+            }
+        },
+        async updateProducts(_, payload) {
+            Api.put('product/' + payload.id, payload.data, {
+              headers: {
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
+              }
+            })
+              .then(() => {
+                alert("Success Update")
+                router.push({ name: "Products", query: { page: 1 } })
+              })
+              .catch((err) => {
+                console.log(err)
+              })
+          },
     }
 }
