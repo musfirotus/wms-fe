@@ -4,23 +4,7 @@
             <h2 class="my-6 text-2xl font-semibold text-gray-200">Products Outcome List</h2>
 
             <div class="flex w-full">
-                <button class="flex justify-right w-1/7 mb-4 px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        class="w-5 h-5 mr-1"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                    </svg>
-                    <span>New Outcome</span>
-                </button>
+                <modal-out />
             </div>
 
             <!-- With actions -->
@@ -88,9 +72,13 @@
 
 <script>
 import { mapActions, mapState } from 'vuex'
+import ModalOut from '@/components/Modals/Add/ModalOut.vue'
 
 export default {
-  name: 'Out',
+  name: 'ViewOut',
+  components: {
+      ModalOut
+  },
   created() {
       this.getOutcomes()
   },

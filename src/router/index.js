@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 import Main from '@/views/Main.vue'
-import Dashboard from '@/views/Dashboard.vue'
+// import Dashboard from '@/views/Dashboard.vue'
 
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css';
@@ -42,7 +42,7 @@ const routes = [
       {
         path: '',
         name: 'Dashboards',
-        component: Dashboard,
+        component: () =>import(/* webpackChunkName: "Dashboards" */ "@/views/Dashboard.vue"),
         // meta: {
         //   requiresAuth: true
         // }

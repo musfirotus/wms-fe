@@ -5,25 +5,7 @@
                 Users List
             </h2>
             <div class="flex w-full">
-                <button
-                    class="flex w-1/7 justify-left mr-2 mb-4 px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        class="w-5 h-5 mr-1"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                    </svg>
-                    <span>New User</span>
-                </button>
+                <modal-user />
             </div>
             <div class="w-full overflow-x-auto rounded-lg shadow-xs">
                 <table class="w-full">
@@ -119,8 +101,12 @@
 
 <script>
     import { mapState, mapActions } from "vuex";
+    import ModalUser from '@/components/Modals/Add/ModalUser.vue'
     export default {
         name: "User",
+        components: {
+            ModalUser
+        },
         created() {
             this.getUser();
         },

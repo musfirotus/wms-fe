@@ -4,15 +4,15 @@
 
 - [x] Logout
 
-| No.     | Views       | GET                | GET id     | POST               | PUT        | Pagination | Count              | Design             | Modals     | Alert      |
-| :-----: | :---------: | :----------------: | :--------: | :----------------: | :--------: | :--------: | :----------------: | :----------------: | :--------: | :--------: |
-| :one:   | User        | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        | :x:        |
-| :two:   | Product     | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        | :x:        |
-| :three: | Product In  | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        | :x:        |
-| :four:  | Product Out | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        | :x:        |
-| :five:  | Dashboard   | :no_entry:         | :no_entry: | :no_entry:         | :no_entry: | :no_entry: | :no_entry:         | :heavy_check_mark: | :no_entry: | :x:        |
-| :six:   | Login       | :no_entry:         | :no_entry: | :heavy_check_mark: | :no_entry: | :no_entry: | :no_entry:         | :heavy_check_mark: | :no_entry: | :x:        |
-| :seven: | Register    | :no_entry:         | :no_entry: | :heavy_check_mark: | :no_entry: | :no_entry: | :no_entry:         | :heavy_check_mark: | :no_entry: | :x:        |
+| No.     | Views       | GET                | GET id     | POST               | PUT        | Pagination | Count              | Design             | Modals             | Alert      |
+| :-----: | :---------: | :----------------: | :--------: | :----------------: | :--------: | :--------: | :----------------: | :----------------: | :----------------: | :--------: |
+| :one:   | User        | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:        |
+| :two:   | Product     | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:        |
+| :three: | Product In  | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:        |
+| :four:  | Product Out | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:        |
+| :five:  | Dashboard   | :no_entry:         | :no_entry: | :no_entry:         | :no_entry: | :no_entry: | :no_entry:         | :heavy_check_mark: | :no_entry:         | :x:        |
+| :six:   | Login       | :no_entry:         | :no_entry: | :heavy_check_mark: | :no_entry: | :no_entry: | :no_entry:         | :heavy_check_mark: | :no_entry:         | :x:        |
+| :seven: | Register    | :no_entry:         | :no_entry: | :heavy_check_mark: | :no_entry: | :no_entry: | :no_entry:         | :heavy_check_mark: | :no_entry:         | :x:        |
 
 ## Vuex Flow
 
