@@ -124,10 +124,10 @@
             this.getIncomes();
         },
         computed: {
-            ...mapState(["incomes"]),
+            ...mapState("In", ["incomes"]),
         },
         methods: {
-            ...mapActions(["getIncomes"]),
+            ...mapActions("In", ["getIncomes"]),
         },
     };
 </script>

@@ -95,10 +95,10 @@ export default {
       this.getOutcomes()
   },
   computed: {
-      ...mapState(['outcomes'])
+      ...mapState("Out", ['outcomes'])
   },
   methods: {
-      ...mapActions(['getOutcomes'])
+      ...mapActions("Out", ['getOutcomes'])
   }
 }
 </script>

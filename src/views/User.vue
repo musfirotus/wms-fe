@@ -126,10 +126,10 @@
         },
 
         methods: {
-            ...mapActions(["getUser"]),
+            ...mapActions("User", ["getUser"]),
         },
         computed: {
-            ...mapState(["users"]),
+            ...mapState("User", ["users"]),
         },
     };
 </script>

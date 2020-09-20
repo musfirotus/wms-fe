@@ -214,10 +214,10 @@
             this.getProducts();
         },
         computed: {
-            ...mapState(["products"]),
+            ...mapState("Product", ["products"]),
         },
         methods: {
-            ...mapActions(["getProducts"]),
+            ...mapActions("Product",["getProducts"]),
         },
     };
 </script>
