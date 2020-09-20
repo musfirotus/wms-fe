@@ -16,12 +16,22 @@
     <div class="w-full p-5">
       <router-link :to="{ name: 'Users' }">User</router-link>
     </div>
+    <hr class="my-4" />
+    <div class="w-full p-5 bottom-0">
+      <button @click="logout" class="text-red-500">
+          Logout
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
-  name: 'SideMain'
+  name: 'SideMain',
+  methods: {
+    ...mapActions("Auth",["logout"])
+  }
 }
 </script>
 <style>
@@ -36,6 +46,11 @@ export default {
 #nav a {
   font-weight: bold;
   color: white;
+}
+
+#nav button {
+  font-weight: bold;
+  color: red;
 }
 
 #nav a.router-link-exact-active {

@@ -74,5 +74,12 @@ export default {
             });
           });
       },
+      logout() {
+        let keysToRemove = ["vuex", "user","token","randid"];
+        for (let key of keysToRemove) {
+          localStorage.removeItem(key);
+        }
+        router.push("/login");
+      },
     },
 };

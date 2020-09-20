@@ -11,6 +11,8 @@
 | :six:   | Login       | :no_entry:         | :no_entry: | :heavy_check_mark: | :no_entry: | :no_entry: | :no_entry:         | :heavy_check_mark: | :x:        |
 | :seven: | Register    | :no_entry:         | :no_entry: | :heavy_check_mark: | :no_entry: | :no_entry: | :no_entry:         | :heavy_check_mark: | :x:        |
 
+- [x] Logout
+
 ## Vuex Flow
 
 ![Flow](./vuex.png)
