@@ -80,16 +80,16 @@ export default {
         this.getOutcomes();
     },
     computed: {
-        ...mapState(["users"]),
-        ...mapState(["products"]),
-        ...mapState(["incomes"]),
-        ...mapState(["outcomes"])
+        ...mapState("User", ["users"]),
+        ...mapState("Product", ["products"]),
+        ...mapState("In", ["incomes"]),
+        ...mapState("Out", ["outcomes"])
     },
     methods: {
-        ...mapActions(["getUser"]),
-        ...mapActions(["getProducts"]),
-        ...mapActions(["getIncomes"]),
-        ...mapActions(["getOutcomes"])
+        ...mapActions("User", ["getUser"]),
+        ...mapActions("Product", ["getProducts"]),
+        ...mapActions("In", ["getIncomes"]),
+        ...mapActions("Out", ["getOutcomes"])
     }
 }
 </script>

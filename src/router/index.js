@@ -33,7 +33,7 @@ const routes = [
   {
     path: '/main',
     name: 'MainRoute',
-    // redirect: {name: 'Dashboards'},
+    redirect: {name: 'Dashboards'},
     component: Main,
     // meta: {
     //   requiresAuth: true
