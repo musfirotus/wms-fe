@@ -160,9 +160,9 @@
                 multipart.append('stock', this.datas.stock)
                 multipart.append('price', this.datas.price)
                 multipart.append('photo', this.datas.photo)
-                this.addProducts(multipart)
+                this.newProducts(multipart)
             },
-            ...mapActions("Product", ["addProducts"])
+            ...mapActions("Product", ["newProducts"])
         }
     };
 </script>

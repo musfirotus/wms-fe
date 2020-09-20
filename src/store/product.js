@@ -24,7 +24,7 @@ export default {
                 error
             }));
         },
-        async addProducts(_, payload) {
+        async newProducts(_, payload) {
             try {
                 await Api.post("/product", payload, {
                     headers: {
@@ -42,6 +42,15 @@ export default {
             } catch (error) {
                 error
             }
-        }
+        },
+        async delProduct(_, id) {
+            Api.delete("/product/" + id)
+              .then(() => {
+                router.go({name: "Products"})
+              })
+              .catch((errr) => {
+                console.log({ errr: errr.message });
+              });
+        },
     }
 }

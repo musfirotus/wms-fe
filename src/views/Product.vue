@@ -91,6 +91,7 @@
                             <button
                                 class="px-2 py-2 text-sm font-medium leading-5 rounded-lg text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                 aria-label="Delete"
+                                @click="deleteProduct(product.id)"
                             >
                                 <svg
                                     class="w-5 h-5"
@@ -139,7 +140,13 @@
             ...mapState("Product", ["products"]),
         },
         methods: {
-            ...mapActions("Product",["getProducts"]),
+            deleteProduct(id) {
+                const yesno = confirm("Are you sure delete data?");
+                if(yesno) {
+                    this.delProduct(id)
+                }
+            },
+            ...mapActions("Product",["getProducts", "delProduct"]),
         },
     };
 </script>
