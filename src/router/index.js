@@ -38,7 +38,7 @@ const routes = [
     // },
     children: [
       {
-        path: '',
+        path: '/dashboard',
         name: 'Dashboards',
         component:() => import(/* webpackChunkName: "Dashboards" */ '@/views/Dashboard.vue'),
         // meta: {
