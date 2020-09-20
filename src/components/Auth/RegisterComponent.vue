@@ -72,11 +72,9 @@
                   type="password"
                 />
               </label>
-
-              <!-- You should use a button here, as the anchor is only used for the example  -->
               <button
                 class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                href="./login.html"
+                type="submit"
               >
                 Create account
               </button>
@@ -97,7 +95,40 @@
 </template>
 
 <script>
+  import { mapActions } from 'vuex';
   export default {
     name: "RegisterIndex",
+    data() {
+      return {
+        username: "",
+        password: "",
+        phone: "",
+        email: "",
+        fullname: "",
+      }
+    },
+    methods: {
+      regForm(e) {
+        let error = [];
+        if (this.full_name === "") error.push("Full Name is Required");
+        if (this.username === "") error.push("Username is Required");
+        if (this.password === "") error.push("Password is Required");
+        if (this.email === "") error.push("Email Address is Required");
+        if (this.phone_number === "") error.push("Phone Number is Required");
+        else {
+          const payload = {
+            full_name: this.full_name,
+            username: this.username,
+            password: this.password,
+            email: this.email,
+            phone_number: this.phone_number,
+          };
+          this.register(payload);
+        }
+        e.preventDefault();
+        return false;
+      },
+      ...mapActions("Auth", ["register"]),
+    },
   };
 </script>

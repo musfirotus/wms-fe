@@ -1,4 +1,6 @@
 import axios from "axios";
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css';
 
 // const port = 3000;
 
@@ -16,6 +18,7 @@ const instance = axios.create({
 // menghandle request
 instance.interceptors.request.use(
     (config) => {
+      NProgress.start();
       return config;
     },
     (error) => Promise.reject(error)
@@ -24,6 +27,7 @@ instance.interceptors.request.use(
 // menghandle response
 instance.interceptors.response.use(
     function(response) {
+      NProgress.done();
       return response;
     },
     function(error) {

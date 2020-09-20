@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css';
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -13,44 +16,60 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login,
-    meta: { requiresAuth:true }
   },
   {
     path: '/register',
     name: 'Register',
     component: () =>import(/* webpackChunkName: "Register" */ "@/views/Register.vue"),
-    meta: { requiresAuth:true }
   },
   {
     path: '/main',
     name: 'MainRoute',
     redirect: {name: 'Dashboards'},
     component: () => import(/* webpackChunkName: "Main" */ '@/views/Main.vue'),
+    meta: {
+      requiresAuth: true
+    },
     children: [
       {
         path: '',
         name: 'Dashboards',
-        component:() => import(/* webpackChunkName: "Dashboards" */ '@/views/Dashboard.vue')
+        component:() => import(/* webpackChunkName: "Dashboards" */ '@/views/Dashboard.vue'),
+        meta: {
+          requiresAuth: true
+        }
       },
       {
         path: 'product',
         name: 'Products',
-        component: () => import(/* webpackChunkName: 'Products' */ '@/views/Product.vue')
+        component: () => import(/* webpackChunkName: 'Products' */ '@/views/Product.vue'),
+        meta: {
+          requiresAuth: true
+        }
       },
       {
         path: 'in',
         name: 'Ins',
-        component: () => import(/* webpackChunkName: 'Ins' */ '@/views/In.vue')
+        component: () => import(/* webpackChunkName: 'Ins' */ '@/views/In.vue'),
+        meta: {
+          requiresAuth: true
+        }
       },
       {
         path: 'out',
         name: 'Outs',
-        component: () => import(/* webpackChunkName: 'Outs' */ '@/views/Out.vue')
+        component: () => import(/* webpackChunkName: 'Outs' */ '@/views/Out.vue'),
+        meta: {
+          requiresAuth: true
+        }
       },
       {
         path: 'user',
         name: 'Users',
-        component: () => import(/* webpackChunkName: 'Users' */ '@/views/User.vue')
+        component: () => import(/* webpackChunkName: 'Users' */ '@/views/User.vue'),
+        meta: {
+          requiresAuth: true
+        }
       }
     ]
   }
@@ -75,6 +94,19 @@ router.beforeEach((to, from, next) => {
   } else {
     next() // make sure to always call next()!
   }
+})
+
+router.beforeResolve((to, from, next) => {
+  if (to.name) {
+      NProgress.start()
+  }
+  next()
+})
+
+router.afterEach((to, from) => {
+  NProgress.done()
+  console.log(to);
+  console.log(from);
 })
 
 export default router
