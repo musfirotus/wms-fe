@@ -7,8 +7,8 @@
 
 | No.     | Views       | GET                | GET id     | POST               | PUT        | DELETE             | Pagination | Design             | Modals             | Alert      |
 | :-----: | :---------: | :----------------: | :--------: | :----------------: | :--------: | :----------------: | :--------: | :----------------: | :----------------: | :--------: |
-| :one:   | User        | :heavy_check_mark: | :x:        | :heavy_check_mark: | :x:        | :heavy_check_mark: | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
-| :two:   | Product     | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:                | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
+| :one:   | User        | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:                | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
+| :two:   | Product     | :heavy_check_mark: | :x:        | :heavy_check_mark: | :x:        | :heavy_check_mark: | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
 | :three: | Product In  | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:                | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
 | :four:  | Product Out | :heavy_check_mark: | :x:        | :x:                | :x:        | :x:                | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
 | :five:  | Dashboard   | :no_entry:         | :no_entry: | :no_entry:         | :no_entry: | :no_entry:         | :no_entry: | :heavy_check_mark: | :no_entry:         | :x:        |
