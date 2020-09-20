@@ -16,60 +16,66 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login,
+    meta: {
+      requiresAuth: true
+    },
   },
   {
     path: '/register',
     name: 'Register',
     component: () =>import(/* webpackChunkName: "Register" */ "@/views/Register.vue"),
+    meta: {
+      requiresAuth: true
+    },
   },
   {
     path: '/main',
     name: 'MainRoute',
     redirect: {name: 'Dashboards'},
     component: () => import(/* webpackChunkName: "Main" */ '@/views/Main.vue'),
-    meta: {
-      requiresAuth: true
-    },
+    // meta: {
+    //   requiresAuth: true
+    // },
     children: [
       {
         path: '',
         name: 'Dashboards',
         component:() => import(/* webpackChunkName: "Dashboards" */ '@/views/Dashboard.vue'),
-        meta: {
-          requiresAuth: true
-        }
+        // meta: {
+        //   requiresAuth: true
+        // }
       },
       {
         path: 'product',
         name: 'Products',
         component: () => import(/* webpackChunkName: 'Products' */ '@/views/Product.vue'),
-        meta: {
-          requiresAuth: true
-        }
+        // meta: {
+        //   requiresAuth: true
+        // }
       },
       {
         path: 'in',
         name: 'Ins',
         component: () => import(/* webpackChunkName: 'Ins' */ '@/views/In.vue'),
-        meta: {
-          requiresAuth: true
-        }
+        // meta: {
+        //   requiresAuth: true
+        // }
       },
       {
         path: 'out',
         name: 'Outs',
         component: () => import(/* webpackChunkName: 'Outs' */ '@/views/Out.vue'),
-        meta: {
-          requiresAuth: true
-        }
+        // meta: {
+        //   requiresAuth: true
+        // }
       },
       {
         path: 'user',
         name: 'Users',
         component: () => import(/* webpackChunkName: 'Users' */ '@/views/User.vue'),
-        meta: {
-          requiresAuth: true
-        }
+        // meta: {
+        //   requiresAuth: true
+        // }
       }
     ]
   }

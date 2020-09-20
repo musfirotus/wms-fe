@@ -13,7 +13,6 @@
             />
           </div> -->
           <div class="flex items-center justify-center p-6 sm:p-12 md:w-full">
-            <div class="alert" v-if="errorMessage!==''">{{errorMessage}}</div>
             <form class="w-full">
               <h1 class="mb-4 text-xl font-semibold text-gray-200">Login</h1>
               <div>
@@ -67,19 +66,15 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
+import { mapActions } from "vuex";
 export default {
   name: 'LoginIndex',
   data: () => ({
     username: "",
     password: "",
   }),
-  created() {
-    // this.reqLogin();
-  },
-  computed: {
-    ...mapState("Auth", ["errorMessage"]),
-  },
+  created() {},
+  computed: {},
   methods: {
     ...mapActions("Auth", ["reqLogin"]),
     sendRequest(e) {
