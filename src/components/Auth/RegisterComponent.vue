@@ -27,7 +27,7 @@
                                 Full Name
                             </label>
                             <input
-                                class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
+                                class="block w-full p-2 rounded-lg text-center mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
                                 placeholder="Nama Anda"
                                 id="full_name"
                                 type="text"
@@ -42,7 +42,7 @@
                                 Phone Number
                             </label>
                             <input
-                                class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
+                                class="block p-2 rounded-lg text-center w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
                                 placeholder="08xxxxxxxxxx"
                                 id="phone_number"
                                 type="text"
@@ -57,7 +57,7 @@
                                 Email Address
                             </label>
                             <input
-                                class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
+                                class="block p-2 rounded-lg text-center w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
                                 placeholder="user@example.com"
                                 id="email"
                                 type="email"
@@ -72,7 +72,7 @@
                                 Username
                             </label>
                             <input
-                                class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
+                                class="block w-full p-2 rounded-lg text-center mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
                                 placeholder="useranda"
                                 id="username"
                                 type="text"
@@ -87,7 +87,7 @@
                                 Password
                             </label>
                             <input
-                                class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
+                                class="block w-full p-2 rounded-lg text-center mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
                                 placeholder="***************"
                                 id="password"
                                 type="password"
@@ -101,7 +101,7 @@
                                 Confirm password
                             </label>
                             <input
-                                class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
+                                class="block w-full p-2 rounded-lg text-center mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
                                 placeholder="***************"
                                 id="confirm"
                                 type="password"
