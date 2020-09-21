@@ -11,7 +11,7 @@
                         <h1 class="mb-4 text-xl font-semibold text-gray-200">
                             Detail 	&amp; Update Product
                         </h1>
-                        <div class="ml-64 my-auto mb-4">
+                        <div class="my-auto mb-4">
                             <img
                                 class="w-full h-full border-4 border-white"
                                 v-bind:src="photo_url"
@@ -37,13 +37,13 @@
                             <div>
                                 <label
                                     class="block mt-4 text-sm text-gray-400"
-                                    for="stock"
+                                    for="price"
                                 >
                                     Price
                                 </label>
                                 <input
                                     class="block w-full p-2 rounded-lg text-center mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input"
-                                    id="stock"
+                                    id="price"
                                     type="text"
                                     v-model="price"
                                 />
@@ -110,6 +110,7 @@
                 id: 0,
                 name: "",
                 price: 0,
+                stock: 0,
                 photo_url: "",
                 photo: null,
             };

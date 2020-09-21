@@ -26,7 +26,9 @@
                         <th class="px-4 py-3 text-center">Price</th>
                         <th class="px-4 py-3 text-center">Supplier</th>
                         <th class="px-4 py-3 text-center">Status</th>
-                        <th class="px-4 py-3 text-center">Actions</th>
+                        <th class="px-4 py-3 text-center">Detail</th>
+                        <th class="px-4 py-3 text-center">Update</th>
+                        <th class="px-4 py-3 text-center">Delete</th>
                     </tr>
                     <tr
                         v-for="(product, i) in products.data"
@@ -53,7 +55,7 @@
                                 class="px-2 py-1 font-semibold leading-tight rounded-full bg-green-700 text-green-100"
                                 >Out of Stock / Ready</span>
                         </td>
-                        <td class="px-4 py-3 justify-center">
+                        <td class="px-4 py-3">
                             <button
                                 class="px-2 py-2 text-sm font-medium leading-5 rounded-lg text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                 aria-label="Detail"
@@ -73,13 +75,15 @@
                                     />
                                 </svg>
                             </button>
+                        </td>
+                        <td class="px-4 py-3">
                             <router-link
                                 class="px-2 py-2 text-sm font-medium leading-5 rounded-lg text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                 aria-label="Edit"
                                 :to="{ name: `DetProduct`, params: { id: product.id } }"
                             >
                                 <svg
-                                    class="w-5 h-5"
+                                    class="w-5 mx-auto h-5"
                                     aria-hidden="true"
                                     fill="currentColor"
                                     viewBox="0 0 20 20"
@@ -89,6 +93,8 @@
                                     ></path>
                                 </svg>
                             </router-link>
+                        </td>
+                        <td class="px-4 py-3">
                             <button
                                 class="px-2 py-2 text-sm font-medium leading-5 rounded-lg text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                 aria-label="Delete"

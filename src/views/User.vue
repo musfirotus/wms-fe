@@ -17,9 +17,9 @@
                         <th class="px-4 py-3 text-center">Email</th>
                         <th class="px-4 py-3 text-center">Phone Number</th>
                         <!-- <th class="px-4 py-3 text-center">Status</th> -->
-                        <th class="px-4 py-3 text-center">Actions</th>
-                        <!-- <th class="px-4 py-3 text-center">Update</th>
-                        <th class="px-4 py-3 text-center">Delete</th> -->
+                        <th class="px-4 py-3 text-center">Detail</th>
+                        <!-- <th class="px-4 py-3 text-center">Update</th> -->
+                        <th class="px-4 py-3 text-center">Delete</th>
                     </tr>
                     <tr
                         v-for="(user, i) in users.data"
@@ -59,21 +59,8 @@
                                     />
                                 </svg>
                             </button>
-                            <button
-                                class="px-2 py-2 text-sm font-medium leading-5 rounded-lg text-gray-400 focus:outline-none focus:shadow-outline-gray"
-                                aria-label="Edit"
-                            >
-                                <svg
-                                    class="w-5 h-5"
-                                    aria-hidden="true"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                >
-                                    <path
-                                        d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"
-                                    />
-                                </svg>
-                            </button>
+                        </td>
+                        <td class="px-4 py-3 justify-center">
                             <button
                                 class="px-2 py-2 text-sm font-medium leading-5 rounded-lg text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                 aria-label="Delete"
