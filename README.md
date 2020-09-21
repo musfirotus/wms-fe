@@ -5,7 +5,7 @@
 - Note :
     - :heavy_check_mark: Finished features
     - :x: Unfinished features
-    - :no_entry: Not include features
+    - :no_entry: Not include in features
 
 - [x] Logout
 - [x] Count in Dashboard
