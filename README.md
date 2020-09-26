@@ -10,15 +10,15 @@
 - [x] Logout
 - [x] Count in Dashboard
 
-| No.     | Views       | GET                | GET id             | POST               | PUT                | DELETE             | Pagination | Design             | Modals             | Alert      |
-| :-----: | :---------: | :----------------: | :----------------: | :----------------: | :----------------: | :----------------: | :--------: | :----------------: | :----------------: | :--------: |
-| :one:   | User        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
-| :two:   | Product     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
-| :three: | Product In  | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
-| :four:  | Product Out | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
-| :five:  | Dashboard   | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :no_entry: | :heavy_check_mark: | :heavy_minus_sign: | :x:        |
-| :six:   | Login       | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :no_entry: | :heavy_check_mark: | :heavy_minus_sign: | :x:        |
-| :seven: | Register    | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :no_entry: | :heavy_check_mark: | :heavy_minus_sign: | :x:        |
+| No.     | Views       | GET                | GET id             | POST               | PUT                | DELETE             | Pagination         | Design             | Modals             | Alert      |
+| :-----: | :---------: | :----------------: | :----------------: | :----------------: | :----------------: | :----------------: | :----------------: | :----------------: | :----------------: | :--------: |
+| :one:   | User        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:        |
+| :two:   | Product     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:        |
+| :three: | Product In  | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:        |
+| :four:  | Product Out | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:        |
+| :five:  | Dashboard   | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :x:        |
+| :six:   | Login       | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :x:        |
+| :seven: | Register    | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :x:        |
 
 ## Vuex Flow
 
