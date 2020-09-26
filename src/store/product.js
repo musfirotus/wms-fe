@@ -37,8 +37,8 @@ export default {
                       "Authorization": `Bearer ${localStorage.getItem("token")}`
                     }
                   })
-                    .then(() => {
-                        // alert(res.data.message)
+                    .then((res) => {
+                        alert(res.data.message)
                         router.go({name: "Products"})
                     })
                     .catch((err) => {
@@ -49,13 +49,21 @@ export default {
             }
         },
         async delProduct(_, id) {
-            Api.delete("/product/" + id)
-              .then(() => {
+          try {
+            await Api.delete("/product/" + id)
+              .then((res) => {
+                alert(res.data.message)
                 router.go({name: "Products"})
               })
-              .catch((errr) => {
-                console.log({ errr: errr.message });
+              .catch((err) => {
+                alert(err.response.data.message)
+                router.go({name: "Products"})
               });
+          } catch (err) {
+            alert(err.response.data.message)
+            router.go({name: "Products"})
+          }
+            
         },
         async getById({ commit }, payload) {
             try {
@@ -69,7 +77,7 @@ export default {
                     commit("setDetail", data)
                 })
                 .catch((err) => {
-                    throw new Error(err)
+                  alert(err.response.data.message)
                 })
             } catch(error) {
                 alert("There's no such product")
@@ -87,7 +95,7 @@ export default {
                 router.push({ name: "Products", query: { page: 1 } })
               })
               .catch((err) => {
-                console.log(err)
+                alert(err.response.data.message)
               })
           },
     }

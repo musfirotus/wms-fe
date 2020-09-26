@@ -16,7 +16,6 @@
                                 class="w-full h-full border-4 border-white"
                                 v-bind:src="photo_url"
                             />
-                            <!-- <input class="mt-4" type="file" name="" ref="file" id="" @change="onSelect" /> -->
                         </div>
                         <div class="my-auto">
                             <div>
@@ -122,7 +121,6 @@
                 this.stock = this.detail.stock;
                 this.photo_url = this.detail.photo_url;
                 this.id = this.detail.id;
-                this.isLoading = false;
             });
         },
         computed: {
@@ -146,11 +144,12 @@
                 this.updateProducts(payload);
             },
             delData() {
-                this.$swal("Sure?", "Delete this product?", "question"
-                ).then(() => this.deleteProducts(this.id));
+                const yesno = confirm("Are you sure you want to delete this data?")
+                if(yesno){
+                    this.delProduct(this.id)
+                }
             },
-            ...mapActions("Product", ["updateProducts", "deleteProducts", "getById",
-            ]),
+            ...mapActions("Product", ["updateProducts", "delProduct", "getById"]),
         },
     };
 </script>
