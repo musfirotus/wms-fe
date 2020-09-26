@@ -40,25 +40,22 @@
                                 >Active</span>
                         </td> -->
                         <td class="px-4 py-3 justify-center">
-                            <button
+                            <router-link
                                 class="px-2 py-2 text-sm font-medium leading-5 rounded-lg text-gray-400 focus:outline-none focus:shadow-outline-gray"
-                                aria-label="Detail"
+                                aria-label="Edit"
+                                :to="{ name: `DetUser`, params: { id: user.id } }"
                             >
                                 <svg
-                                    class="w-5 h-5"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
+                                    class="w-5 mx-auto h-5"
+                                    aria-hidden="true"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
                                 >
                                     <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                                    />
+                                        d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"
+                                    ></path>
                                 </svg>
-                            </button>
+                            </router-link>
                         </td>
                         <td class="px-4 py-3 justify-center">
                             <button
@@ -89,11 +86,16 @@
 
 <script>
     import { mapState, mapActions } from "vuex";
-    import ModalUser from '@/components/Modals/Add/ModalUser.vue'
+    import ModalUser from "@/components/Modals/Add/ModalUser.vue";
     export default {
         name: "User",
         components: {
             ModalUser
+        },
+        data() {
+            return {
+                showModal: false,
+            };
         },
         created() {
             this.getUser();
@@ -102,13 +104,18 @@
             ...mapState("User", ["users"]),
         },
         methods: {
+            toggleModal() {
+                this.showModal = !this.showModal;
+            },
             ...mapActions("User", ["getUser", "deleteUser"]),
-            delUser(id){
-                const yesno = confirm("Are you sure you want to delete this data?")
-                if(yesno){
-                    this.deleteUser(id)
+            delUser(id) {
+                const yesno = confirm(
+                    "Are you sure you want to delete this data?"
+                );
+                if (yesno) {
+                    this.deleteUser(id);
                 }
             },
-        }
+        },
     };
 </script>

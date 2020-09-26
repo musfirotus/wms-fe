@@ -51,6 +51,13 @@ const routes = [
         path: 'product',
         name: 'Products',
         component: () => import(/* webpackChunkName: 'Products' */ '@/views/Product.vue'),
+        // children: [
+        //   {
+        //     path: ':id',
+        //     name: 'DetProduct',
+        //     component: () => import(/* webpackChunkName: "DetailProduct" */ '@/components/Update/UpProduct.vue')
+        //   }
+        // ]
       },
       {
         path:'product/:id',
@@ -80,7 +87,12 @@ const routes = [
         // meta: {
         //   requiresAuth: true
         // }
-      }
+      },
+      {
+        path:'user/:id',
+        name: "DetUser",
+        component: () => import(/* webpackChunkName: "DetailUser" */ '@/components/Update/UpUser.vue')
+      },
     ]
   }
 ]

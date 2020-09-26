@@ -5,11 +5,15 @@ export default {
     namespaced: true,
     state: () => ({
         users: [],
+        detail: []
     }),
     mutations: {
         getUsersList(state, payload) {
             state.users = payload.data;
         },
+        setDetail(state, payload) {
+            state.detail = payload
+        }
     },
     actions: {
         async getUser({ commit }) {
@@ -63,6 +67,26 @@ export default {
                 alert(err.response.message)
                 router.go({name: "Users"})
             }
-        }
+        },
+        async getById({ commit }, payload) {
+            try {
+                await Api.get("user/" + payload, {
+                    headers: {
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`
+                    }
+                })
+                .then((res) => {
+                    const { data : { data } } = res
+                    commit("setDetail", data)
+                })
+                .catch((err) => {
+                    alert(err.response.data.message)
+                    router.push({ name: "Users", query: { page: 1 }})
+                })
+            } catch(error) {
+                alert("There's no such user")
+                router.push({ name: "Users", query: { page: 1 }})
+            }
+        },
     }
 }
