@@ -31,6 +31,7 @@
                 <div class="w-full max-w-sm mx-auto mt-8 bg-gray-900">
                     <form
                         class="shadow-md rounded px-8 pt-6 pb-8 mb-4"
+                        @submit="addForm"
                     >
                         <h1 class="text-white font-bold mt-4 mb-8 text-xl">
                             Add User
@@ -45,6 +46,7 @@
                             <input
                                 class="bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                                 id="full_name"
+                                v-model="full_name"
                                 type="text"
                             />
                         </div>
@@ -58,6 +60,7 @@
                             <input
                                 class="bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                                 id="phone_number"
+                                v-model="phone_number"
                                 type="text"
                             />
                         </div>
@@ -71,6 +74,7 @@
                             <input
                                 class="bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                                 id="email"
+                                v-model="email"
                                 type="email"
                             />
                         </div>
@@ -84,6 +88,7 @@
                             <input
                                 class="bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                                 id="username"
+                                v-model="username"
                                 type="text"
                             />
                         </div>
@@ -97,25 +102,24 @@
                             <input
                                 class="bg-gray-800 shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                                 id="password"
+                                v-model="password"
                                 type="password"
                             />
                         </div>
 
                         <div class="flex items-center justify-between">
-                            <router-link to="/dashboard" class="w-full">
-                                <button
-                                    class="bg-purple-500 hover:bg-purple-700 text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                                    type="button"
-                                >
-                                    Add
-                                </button>
-                            </router-link>
+                            <button
+                                class="bg-purple-500 hover:bg-purple-700 text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                type="submit"
+                            >
+                                Add
+                            </button>
                         </div>
                         <div class="mt-4">
                             <button
                                 class="text-purple-500 text-center font-bold"
                                 style="transition: all .15s ease"
-                                v-on:click="toggleModal()"
+                                @click="toggleModal()"
                             >
                                 Cancel
                             </button>
@@ -132,18 +136,47 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
     export default {
-        name: "ProductUser",
+        name: "ModalUser",
         components: {},
         data() {
             return {
                 showModal: false,
+                full_name: "",
+                username: "",
+                password: "",
+                email: "",
+                phone_number: ""
             };
         },
         methods: {
             toggleModal() {
                 this.showModal = !this.showModal;
             },
+            addForm(e) {
+                let error = [];
+                if (this.full_name === "") error.push("Full name Required");
+                if (this.email === "") error.push("Email Required");
+                if (this.phone_number === "") error.push("Phone number Required");
+                if (this.username === "") error.push("Username Required");
+                if (this.password === "") error.push("Password Required");
+                if (error.length > 0) alert(error.join(",\r\n"));
+                else {
+                    const payload = {
+                        full_name: this.full_name,
+                        email: this.email,
+                        phone_number: this.phone_number,
+                        username: this.username,
+                        password: this.password
+                    };
+                    this.addUser(payload);
+                    this.showModal = false;
+                }
+                e.preventDefault();
+                return false;
+            },
+            ...mapActions("User", ["addUser"])
         },
     };
 </script>

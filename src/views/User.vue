@@ -64,6 +64,7 @@
                             <button
                                 class="px-2 py-2 text-sm font-medium leading-5 rounded-lg text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                 aria-label="Delete"
+                                @click="delUser(user.id)"
                             >
                                 <svg
                                     class="w-5 h-5"
@@ -97,12 +98,17 @@
         created() {
             this.getUser();
         },
-
-        methods: {
-            ...mapActions("User", ["getUser"]),
-        },
         computed: {
             ...mapState("User", ["users"]),
         },
+        methods: {
+            ...mapActions("User", ["getUser", "deleteUser"]),
+            delUser(id){
+                const yesno = confirm("Are you sure you want to delete this data?")
+                if(yesno){
+                    this.deleteUser(id)
+                }
+            },
+        }
     };
 </script>
