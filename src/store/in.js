@@ -42,5 +42,24 @@ export default {
                 console.log(err);
             }
         },
+        async delIncome(_, id){
+            try {
+                await Api.delete("/in/" + id, {
+                    headers: {
+                        "Authorization": `Bearer ${localStorage.getItem("token")}`
+                    }
+                })
+                    .then(() => {
+                        router.go({name: "Ins"})
+                    })
+                    .catch(err => {
+                        alert(err.response.data.message)
+                        router.push({name: "Ins"})
+                    })
+            } catch (err) {
+                alert(err.response.data.message)
+                router.push({name: "Ins"})
+            }
+        }
     }
 }
