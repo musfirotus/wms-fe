@@ -1,4 +1,5 @@
 import Api from './api';
+import router from '../router/index'
 
 export default {
     namespaced: true,
@@ -22,6 +23,24 @@ export default {
               .catch((error) => console.log({
                 error
             }));
+        },
+        async addIn(_, payload) {
+            try {
+                await Api.post("/in", JSON.stringify({ data: payload }), {
+                    headers: {
+                        "Authorization": `Bearer ${localStorage.getItem("token")}`
+                    }
+                })
+                .then((res) => {
+                    alert(res.data.message)
+                    router.go({name: "Ins"})
+                })
+                .catch((err) => {
+                    alert(err.response.data.message)
+                });
+            } catch (err) {
+                console.log(err);
+            }
         },
     }
 }

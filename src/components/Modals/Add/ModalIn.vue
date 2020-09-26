@@ -29,10 +29,10 @@
         >
             <!-- a -->
             <div class="mx-auto">
-                <div class="w-full rounded-lg max-w-xs mx-auto mt-8 bg-gray-900 text-gray-400">
-                    <form
-                        class="shadow-md rounded px-8 pt-6 pb-8 mb-4"
-                    >
+                <div
+                    class="w-full rounded-lg max-w-xs mx-auto mt-8 bg-gray-900 text-gray-400"
+                >
+                    <form @submit="addForm" class="shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         <h1 class="font-bold mt-4 mb-8 text-xl">
                             Add Product IN
                         </h1>
@@ -48,10 +48,15 @@
                                 <select
                                     class="shadow bg-gray-800 appearance-none w-full border py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-gray-800 focus:border-gray-500"
                                     id="grid-state"
+                                    v-model="product_name"
+                                    placeholder="Select Product"
                                 >
-                                    <option>Product 1</option>
-                                    <option>Product 2</option>
-                                    <option>Product 3</option>
+                                    <option
+                                        v-for="(product, i) in products.data"
+                                        :key="i"
+                                        :value="product.id"
+                                        >{{ product.name }}</option
+                                    >
                                 </select>
                                 <div
                                     class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
@@ -79,19 +84,18 @@
                             <input
                                 class="shadow bg-gray-800 appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                                 id="total"
+                                v-model="total"
                                 type="text"
                             />
                         </div>
 
                         <div class="flex items-center justify-between">
-                            <router-link to="/dashboard" class="w-full">
-                                <button
-                                    class="bg-blue-500 hover:bg-blue-700 text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                                    type="button"
-                                >
-                                    Add
-                                </button>
-                            </router-link>
+                            <button
+                                class="bg-blue-500 hover:bg-blue-700 text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                type="submit"
+                            >
+                                Add
+                            </button>
                         </div>
                         <div class="mt-4">
                             <button
@@ -115,18 +119,45 @@
 </template>
 
 <script>
+    import { mapActions, mapState } from "vuex";
     export default {
         name: "ModalIn",
         components: {},
         data() {
             return {
                 showModal: false,
+                total: "",
+                product_name: ""
             };
+        },
+        created() {
+            this.getProducts();
+        },
+        computed: {
+            ...mapState("Product", ["products"]),
         },
         methods: {
             toggleModal() {
                 this.showModal = !this.showModal;
             },
+            addForm(e) {
+                let error = [];
+                if (this.product_name === "") error.push("Product name Required");
+                if (this.total === "") error.push("total Required");
+                if (error.length > 0) alert(error.join(",\r\n"));
+                else {
+                    const payload = {
+                        product_id: this.product_name,
+                        total: this.total,
+                    };
+                    this.addIn(payload);
+                    this.showModal = false;
+                }
+                e.preventDefault();
+                return false;
+            },
+            ...mapActions("Product", ["getProducts"]),
+            ...mapActions("In", ["addIn"]),
         },
     };
 </script>
