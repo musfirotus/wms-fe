@@ -5,7 +5,7 @@
 - Note :
     - :heavy_check_mark: Finished features
     - :x: Unfinished features
-    - :no_entry: Not include features
+    - :heavy_minus_sign: Not include features
 
 - [x] Logout
 - [x] Count in Dashboard
@@ -14,11 +14,11 @@
 | :-----: | :---------: | :----------------: | :----------------: | :----------------: | :----------------: | :----------------: | :--------: | :----------------: | :----------------: | :--------: |
 | :one:   | User        | :heavy_check_mark: | :x:                | :heavy_check_mark: | :x:                | :heavy_check_mark: | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
 | :two:   | Product     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
-| :three: | Product In  | :heavy_check_mark: | :no_entry:         | :heavy_check_mark: | :no_entry:         | :heavy_check_mark: | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
-| :four:  | Product Out | :heavy_check_mark: | :no_entry:         | :heavy_check_mark: | :no_entry:         | :heavy_check_mark: | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
-| :five:  | Dashboard   | :no_entry:         | :no_entry:         | :no_entry:         | :no_entry:         | :no_entry:         | :no_entry: | :heavy_check_mark: | :no_entry:         | :x:        |
-| :six:   | Login       | :no_entry:         | :no_entry:         | :heavy_check_mark: | :no_entry:         | :no_entry:         | :no_entry: | :heavy_check_mark: | :no_entry:         | :x:        |
-| :seven: | Register    | :no_entry:         | :no_entry:         | :heavy_check_mark: | :no_entry:         | :no_entry:         | :no_entry: | :heavy_check_mark: | :no_entry:         | :x:        |
+| :three: | Product In  | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
+| :four:  | Product Out | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :x:        | :heavy_check_mark: | :heavy_check_mark: | :x:        |
+| :five:  | Dashboard   | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :no_entry: | :heavy_check_mark: | :heavy_minus_sign: | :x:        |
+| :six:   | Login       | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :no_entry: | :heavy_check_mark: | :heavy_minus_sign: | :x:        |
+| :seven: | Register    | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :no_entry: | :heavy_check_mark: | :heavy_minus_sign: | :x:        |
 
 ## Vuex Flow
 
