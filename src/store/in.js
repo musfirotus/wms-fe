@@ -37,9 +37,11 @@ export default {
                 })
                 .catch((err) => {
                     alert(err.response.data.message)
+                    router.go({name: "Ins"})
                 });
             } catch (err) {
                 console.log(err);
+                router.go({name: "Ins"})
             }
         },
         async delIncome(_, id){

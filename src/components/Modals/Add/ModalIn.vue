@@ -101,7 +101,7 @@
                             <button
                                 class="text-purple-500 text-center font-bold"
                                 style="transition: all .15s ease"
-                                v-on:click="toggleModal()"
+                                @click="toggleModal()"
                             >
                                 Cancel
                             </button>
