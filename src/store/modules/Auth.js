@@ -60,9 +60,7 @@ export default {
         });
       },
       async register({ commit }, payload) {
-        Api.post("/auth/signup", JSON.stringify({
-            data: payload
-          }))
+        Api.post("/auth/signup", JSON.stringify({ data: payload }))
           .then((res) => {
             const { data: { data } } = res
             console.log({ data });

@@ -35,58 +35,42 @@ const routes = [
     name: 'MainRoute',
     redirect: {name: 'Dashboards'},
     component: Main,
-    // meta: {
-    //   requiresAuth: true
-    // },
     children: [
       {
         path: '',
         name: 'Dashboards',
         component: () =>import(/* webpackChunkName: "Dashboards" */ "@/views/Dashboard.vue"),
-        // meta: {
-        //   requiresAuth: true
-        // }
       },
       {
         path: 'product',
-        name: 'Products',
         component: () => import(/* webpackChunkName: 'Products' */ '@/views/Product.vue'),
-        // children: [
-        //   {
-        //     path: ':id',
-        //     name: 'DetProduct',
-        //     component: () => import(/* webpackChunkName: "DetailProduct" */ '@/components/Update/UpProduct.vue')
-        //   }
-        // ]
-      },
-      {
-        path:'product/:id',
-        name: "DetProduct",
-        component: () => import(/* webpackChunkName: "DetailProduct" */ '@/components/Update/UpProduct.vue')
+        children: [
+          {
+            path: '',
+            name: 'Products',
+            component: () => import('@/components/Content/ProductContent.vue')
+          },
+          {
+            path: 'product/:id',
+            name: 'DetProduct',
+            component: () => import(/* webpackChunkName: "DetailProduct" */ '@/components/Update/UpProduct.vue')
+          }
+        ]
       },
       {
         path: 'in',
         name: 'Ins',
         component: () => import(/* webpackChunkName: 'Ins' */ '@/views/In.vue'),
-        // meta: {
-        //   requiresAuth: true
-        // }
       },
       {
         path: 'out',
         name: 'Outs',
         component: () => import(/* webpackChunkName: 'Outs' */ '@/views/Out.vue'),
-        // meta: {
-        //   requiresAuth: true
-        // }
       },
       {
         path: 'user',
         name: 'Users',
         component: () => import(/* webpackChunkName: 'Users' */ '@/views/User.vue'),
-        // meta: {
-        //   requiresAuth: true
-        // }
       },
       {
         path:'user/:id',
@@ -104,7 +88,8 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  console.log(to,from)
+  // console.log(to,from)
+  {from, next}
   if (to.matched.some(record => !record.meta.requiresAuth)) {
     if (!localStorage.getItem("token")) {
       next({
@@ -119,6 +104,7 @@ router.beforeEach((to, from, next) => {
 })
 
 router.beforeResolve((to, from, next) => {
+  {from}
   if (to.name) {
       NProgress.start()
   }
@@ -126,9 +112,10 @@ router.beforeResolve((to, from, next) => {
 })
 
 router.afterEach((to, from) => {
+  {to,from}
   NProgress.done()
-  console.log(to);
-  console.log(from);
+  // console.log(to);
+  // console.log(from);
 })
 
 export default router
