@@ -9,9 +9,6 @@
                 <modal-product />
                 <modal-in />
                 <modal-out />
-                <report-all />
-                <report-in />
-                <report-out />
             </div>
 
             <!-- With actions -->
@@ -126,9 +123,9 @@
     import ModalProduct from '@/components/Modals/Add/ModalProduct.vue'
     import ModalIn from '@/components/Modals/Add/ModalIn.vue'
     import ModalOut from '@/components/Modals/Add/ModalOut.vue'
-    import ReportAll from '@/components/Modals/Report/ReportAll.vue'
-    import ReportIn from '@/components/Modals/Report/ReportIn.vue'
-    import ReportOut from '@/components/Modals/Report/ReportOut.vue'
+    // import ReportAll from '@/components/Modals/Report/ReportAll.vue'
+    // import ReportIn from '@/components/Modals/Report/ReportIn.vue'
+    // import ReportOut from '@/components/Modals/Report/ReportOut.vue'
 
     export default {
         name: "Product",
@@ -136,9 +133,9 @@
             ModalProduct,
             ModalIn,
             ModalOut,
-            ReportAll,
-            ReportIn,
-            ReportOut
+            // ReportAll,
+            // ReportIn,
+            // ReportOut
         },
         created() {
             this.getProducts();

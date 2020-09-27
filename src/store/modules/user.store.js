@@ -1,5 +1,6 @@
-import Api from './api';
-import router from '../router/index'
+// import Api from '../service/api';
+import UserApi from '../service/user.api'
+import router from '@/router/index'
 
 export default {
     namespaced: true,
@@ -17,24 +18,18 @@ export default {
     },
     actions: {
         async getUser({ commit }) {
-            Api.get("/user?limit=10000&page=1", {
-                headers: {
-                    Authorization: `bearer ${localStorage.getItem("token")}`
-                },
-            }).then((response) => {
+            await UserApi.all()
+            .then((response) => {
                 commit("getUsersList", response.data)
             })
-            .catch((error) => console.log({
-                error
-            }));
+            .catch((err) => {
+                alert(err.response.message)
+                router.go({name: "Users"})
+            });
         },
         async addUser(_, payload){
             try {
-                await Api.post("/user", JSON.stringify({ data: payload }), {
-                    headers: {
-                        "Authorization": `Bearer ${localStorage.getItem("token")}`
-                    }
-                })
+                await UserApi.new(payload)
                 .then(res => {
                     alert(res.data.message)
                     router.go({name: "Users"})
@@ -50,11 +45,7 @@ export default {
         },
         async deleteUser(_, id){
             try {
-                await Api.delete("/user/" + id, {
-                    headers: {
-                        "Authorization": `Bearer ${localStorage.getItem("token")}`
-                    }
-                })
+                await UserApi.del(id)
                 .then((res) => {
                     alert(res.data.message)
                     router.go({name: "Users"})
@@ -70,11 +61,7 @@ export default {
         },
         async getById({ commit }, payload) {
             try {
-                await Api.get("user/" + payload, {
-                    headers: {
-                    'Authorization': `Bearer ${localStorage.getItem("token")}`
-                    }
-                })
+                await UserApi.get(payload)
                 .then((res) => {
                     const { data : { data } } = res
                     commit("setDetail", data)

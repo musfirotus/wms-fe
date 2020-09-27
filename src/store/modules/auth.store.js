@@ -1,5 +1,6 @@
-import Api from './api';
-import router from '../router/index'
+import Api from '../service/api';
+// import AuthApi from '../service/auth.api'
+import router from '@/router/index'
 
 export default {
     namespaced: true,

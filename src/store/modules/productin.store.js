@@ -1,5 +1,5 @@
-import Api from './api';
-import router from '../router/index'
+import InApi from '../service/productin.api'
+import router from '@/router/index'
 
 export default {
     namespaced: true,
@@ -13,11 +13,7 @@ export default {
     },
     actions: {
         async getIncomes({ commit }) {
-            Api.get("/in?limit=10000&page=1", {
-                headers: {
-                  Authorization: `bearer ${localStorage.getItem("token")}`
-                },
-              }).then((response) => {
+            InApi.all().then((response) => {
                 commit("getIncomesList", response.data)
               })
               .catch((error) => console.log({
@@ -26,11 +22,7 @@ export default {
         },
         async addIn(_, payload) {
             try {
-                await Api.post("/in", JSON.stringify({ data: payload }), {
-                    headers: {
-                        "Authorization": `Bearer ${localStorage.getItem("token")}`
-                    }
-                })
+                await InApi.new(payload)
                 .then((res) => {
                     alert(res.data.message)
                     router.go({name: "Ins"})
@@ -46,12 +38,9 @@ export default {
         },
         async delIncome(_, id){
             try {
-                await Api.delete("/in/" + id, {
-                    headers: {
-                        "Authorization": `Bearer ${localStorage.getItem("token")}`
-                    }
-                })
-                    .then(() => {
+                await InApi.del(id)
+                    .then((res) => {
+                        alert(res.data.message)
                         router.go({name: "Ins"})
                     })
                     .catch(err => {

@@ -1,5 +1,6 @@
-import Api from './api';
-import router from '../router/index'
+// import Api from '../service/api';
+import OutApi from '../service/productout.api'
+import router from '@/router/index'
 
 export default {
     namespaced: true,
@@ -13,11 +14,8 @@ export default {
     },
     actions: {
         async getOutcomes({ commit }) {
-            await Api.get("/out?limit=10000&page=1", {
-                headers: {
-                  Authorization: `bearer ${localStorage.getItem("token")}`
-                },
-              }).then((response) => {
+            await OutApi.all()
+              .then((response) => {
                 commit("getOutcomesList", response.data)
               })
               .catch((error) => console.log({
@@ -26,11 +24,7 @@ export default {
         },
         async addOut(_, payload) {
             try {
-                await Api.post("/out", JSON.stringify({ data: payload }), {
-                    headers: {
-                        "Authorization": `Bearer ${localStorage.getItem("token")}`
-                    }
-                })
+                await OutApi.new(payload)
                 .then((res) => {
                     alert(res.data.message)
                     router.go({name: "Outs"})
@@ -43,11 +37,7 @@ export default {
         },
         async delOutcome(_, payload){
             try {
-                await Api.delete("/out/" + payload, {
-                    headers: {
-                        "Authorization": `Bearer ${localStorage.getItem("token")}`
-                    }
-                })
+                await OutApi.del(payload)
                 .then(() => {
                     router.go({name: "Outs"})
                 }).catch((err) => {

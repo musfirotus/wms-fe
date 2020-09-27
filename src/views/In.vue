@@ -6,7 +6,7 @@
             </h2>
             <div class="flex w-full">
                 <modal-in />
-                <report-in />
+                <!-- <report-in /> -->
             </div>
 
             <!-- With actions -->
@@ -63,13 +63,13 @@
 
 <script>
     import { mapActions, mapState } from "vuex";
-    import ReportIn from '@/components/Modals/Report/ReportIn.vue'
+    // import ReportIn from '@/components/Modals/Report/ReportIn.vue'
     import ModalIn from '@/components/Modals/Add/ModalIn.vue'
 
     export default {
         name: "ViewIn",
         components: {
-            ReportIn,
+            // ReportIn,
             ModalIn
         },
         created() {
