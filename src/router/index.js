@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 import Main from '@/views/Main.vue'
-// import Dashboard from '@/views/Dashboard.vue'
+import Dashboard from '@/views/Dashboard.vue'
 
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css';
@@ -39,7 +39,7 @@ const routes = [
       {
         path: '',
         name: 'Dashboards',
-        component: () =>import(/* webpackChunkName: "Dashboards" */ "@/views/Dashboard.vue"),
+        component: Dashboard,
       },
       {
         path: 'product',
@@ -51,7 +51,7 @@ const routes = [
             component: () => import('@/components/Content/ProductContent.vue')
           },
           {
-            path: 'product/:id',
+            path: ':id',
             name: 'DetProduct',
             component: () => import(/* webpackChunkName: "DetailProduct" */ '@/components/Update/UpProduct.vue')
           }
@@ -69,13 +69,19 @@ const routes = [
       },
       {
         path: 'user',
-        name: 'Users',
         component: () => import(/* webpackChunkName: 'Users' */ '@/views/User.vue'),
-      },
-      {
-        path:'user/:id',
-        name: "DetUser",
-        component: () => import(/* webpackChunkName: "DetailUser" */ '@/components/Update/UpUser.vue')
+        children: [
+          {
+            path: '',
+            name: 'Users',
+            component: () => import('@/components/Content/UserContent.vue')
+          },
+          {
+            path:':id',
+            name: "DetUser",
+            component: () => import(/* webpackChunkName: "DetailUser" */ '@/components/Update/UpUser.vue')
+          },
+        ]
       },
     ]
   }

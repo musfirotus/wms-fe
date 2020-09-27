@@ -1,5 +1,4 @@
-// import Api from '../service/api';
-import UserApi from '../service/user.api'
+import UserApi from '@/service/User'
 import router from '@/router/index'
 
 export default {

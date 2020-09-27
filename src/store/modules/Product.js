@@ -1,4 +1,4 @@
-import AllApi from "../service/productall.api";
+import AllApi from "@/service/Product";
 import router from "@/router/index";
 
 export default {

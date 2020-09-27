@@ -70,7 +70,7 @@
                                     Supplier
                                 </label>
                                 <p class="block w-full mt-1 text-sm p-2 rounded-lg border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input">
-                                    {{detail.supplier.full_name}}
+                                    {{detail.supplier['full_name']}}
                                 </p>
                             </div>
 

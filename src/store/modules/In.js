@@ -1,4 +1,4 @@
-import InApi from '../service/productin.api'
+import InApi from '@/service/In'
 import router from '@/router/index'
 
 export default {
